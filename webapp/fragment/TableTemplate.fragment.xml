@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table" xmlns:form="sap.ui.layout.form" xmlns:layout="sap.ui.layout" xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1">
+    <table:Table selectionMode="None" visibleRowCountMode="Auto" rows="{/Regions}">
+        <table:columns>
+            <template:repeat list="{fields>/results}" var="field">
+                <table:Column>
+                    <Label text="{field>name}" />
+                        <table:template>
+                            <Text text="{= '{' + ${field>name} + '}' }"/>
+                        </table:template> 
+                </table:Column>
+            </template:repeat>
+        </table:columns>
+    </table:Table>
+</core:FragmentDefinition>
